@@ -1,0 +1,181 @@
+.nav {
+  &__main{
+    @include screen--xl {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__main-wrap {
+    background-color: $white;
+    position: fixed;
+    left: 100%;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: $header-height $gutter;
+    transition: 0.3s ease-in-out;
+
+    @include screen--xl {
+      position: relative;
+      top: auto;
+      left: auto;
+      height: auto;
+      width: auto;
+      padding: 0;
+      background-color: transparent;
+    }
+
+    > div {
+      height: calc(100vh - #{$header-height});
+      overflow-y: scroll;
+
+      @include screen--xl {
+        height: auto;
+        overflow: visible;
+      }
+
+      > ul {
+        overflow: hidden;
+
+        @include screen--xl {
+          display: flex;
+          align-items: center;
+          overflow: visible;
+        }
+
+        > li {
+          opacity: 0;
+          transform: translateX(20px);
+          margin-bottom: 16px;
+
+          @include screen--xl {
+            opacity: 1;
+            transform: translate(0);
+            margin-left: $gutter;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      a {
+        font-size: $nav__font-size;
+        font-family: $nav__font;
+        font-weight: $nav__font-weight;
+        color: $nav__font-color;
+
+        @include screen--xl {
+          font-family: $nav__font--desktop;
+          font-size: $nav__font-size--desktop;
+          font-weight: $nav__font-wight--desktop;
+          color: $nav__font-color--desktop;
+        }
+
+        &:hover, &:focus {
+          color: $color__secondary;
+        }
+      }
+    }
+  }
+
+  &__button {
+    position: relative;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    cursor: pointer;
+    z-index: 9999;
+    transition: $transition;
+
+    &:hover {
+      background: transparent;
+    }
+
+    @include screen--xl {
+      display: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 18px;
+    background: transparent;
+    transition: 0.2s ease;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: -7px;
+      left: 0;
+      background: $black;
+      width: 35px;
+      height: 2px;
+      transition: 0.2s ease;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 7px;
+      left: 0;
+      background: $black;
+      width: 35px;
+      height: 2px;
+      transition: 0.2s ease;
+    }
+
+
+    &-wrap {
+      position: relative;
+      transition: 0.3s ease;
+      width: 35px;
+      height: 35px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.toggle-main-nav {
+  .nav__button {
+    background: transparent;
+  }
+
+  .nav__icon {
+    transition: 0.2s ease;
+
+    &:before {
+      top: 0;
+      transform: rotate(-45deg);
+      transform-origin: center;
+      transition: 0.2s ease;
+    }
+
+    &:after {
+      top: 0;
+      transform: rotate(45deg);
+      transform-origin: center;
+      transition: 0.2s ease;
+    }
+  }
+
+  .nav__main-wrap {
+    position: absolute;
+    left: 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  &.animate {
+    .menu-item {
+      opacity: 1;
+      transform: translate(0);
+      transition: 0.4s ease-out;
+    }
+  }
+}

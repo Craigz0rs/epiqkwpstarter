@@ -1,0 +1,257 @@
+$white: #ffffff;
+$black: #000;
+$grey: grey;
+
+$color__primary: #1F3050;
+$color__secondary :#72F0B2;
+
+$colors: ( "black": $black, "white": $white, "grey": $grey, "primary": $color__primary, "secondary": $color__secondary );
+
+$color__body-bg: $white;
+
+$font__color--body: $black;
+$font__color--heading: $color__primary;
+$font__color--link: $font__color--body;
+
+$font__size--base: 16px;
+$font__line-ht--base: 1;
+$font__family--heading: 'sweet-sans-pro', sans-serif;
+$font__family--body: 'acumin-pro-wide', sans-serif;
+
+$font__weight--light: 300;
+$font__weight--book: 400;
+$font__weight--regular: 400;
+$font__weight--semibold: 600;
+$font__weight--bold: 700;
+$font__weight--heading: 800;
+$font__weight--body: 400;
+
+$gutter: 30px;
+$gutter--sm: calc(0.5 * #{$gutter});
+$gutter--lg: 150px;
+$site__max-width: none;
+
+//header & nav
+$header-height: 100px;
+$header-height--desktop: $header-height;
+$header-bg: transparent;
+$header-bg--scrolled: $white;
+
+$nav__font: $font__family--heading;
+$nav__font--desktop: $nav__font;
+$nav__font-size: 30px;
+$nav__font-size--desktop: 16px;
+$nav__font-color: $black;
+$nav__font-color--desktop: $nav__font-color;
+$nav__font-weight: $font__weight--heading;
+$nav__font-wight--desktop: $nav__font-weight;
+
+$transition: 0.3s ease;
+
+$breakpoints: ( no: 0, xs: 480px, sm: 600px, md: 782px, lg: 960px, xl: 1080px, xxl: 1280px, xxxl: 1440px, xxxxl: 1600px );
+
+
+//old skeleton variables
+$primary: $color__primary;
+$secondary: $color__secondary;
+
+$body-color: $font__color--body;
+$body-bg: $color__body-bg;
+
+$font-path: '../fonts';
+$fa-font-path: $font-path;
+$font-family-heading: $font__family--heading;
+$font-weight-heading-regular: 800;
+$font-weight-heading-bold: 800;
+$font-family-body: $font__family--body;
+$font-weight-body-regular: $font__weight--body;
+
+$breakpoint: md;
+$breakpoint-desktop: xl;
+$breakpoint-nav: xl;
+
+$grid-breakpoints: $breakpoints;
+
+$grid-padding: $gutter;
+$grid-padding-lg: $gutter--lg;
+
+$num-columns: 12;
+
+$transition-fast: 275ms;
+$transition-medium: 400ms;
+$transition-slow: 650ms;
+
+$border-radius: 0;
+$border-radius-md: 0;
+$border-radius-sm: 0;
+
+// TypeKit ID: 
+
+//$svg: btoa( '<svg xmlns="http://www.w3.org/2000/svg" width="55.202" height="55.202" overflow="visible"><circle cx="27.601" cy="27.601" r="27.601" fill="#7b4e3c"/><path d="M36.964 25.957v6.126c0 .37-.284 1.282-1.282 1.282-.248 0-.607-.126-.801-.282l-3.408-2.726a9.72 9.72 0 00-6.051-2.122h-1.125a4.845 4.845 0 00-.177 1.282c0 1.165.391 2.241 1.048 3.104.633.83.006 2.026-1.038 2.026h-2.977c-.476 0-.93-.255-1.138-.683a10.157 10.157 0 01-1.024-4.446c0-.435.032-.863.087-1.282h-1.351a2.565 2.565 0 01-2.565-2.565v-3.847a2.565 2.565 0 012.565-2.565h7.694a9.722 9.722 0 006.051-2.122l3.408-2.726a1.28 1.28 0 01.801-.282c1.003 0 1.282.932 1.282 1.282v6.126a2.554 2.554 0 011.282 2.209 2.549 2.549 0 01-1.281 2.211zM34.4 18.08l-1.324 1.06a12.295 12.295 0 01-7.652 2.684v3.847c2.77 0 5.488.953 7.652 2.684l1.324 1.06V18.08z" fill="#fff"/></svg>' );
+// url( 'data:image/svg+xml;base64,$svg' );
+
+/**
+ * Formidable Forms
+ */
+//fonts
+$frm_font_1: $font-family-body;
+
+//css vars
+$frm_var_form-width: 100%;
+$frm_var_form-align: left;
+$frm_var_direction: ltr;
+$frm_var_fieldset: 0px;
+$frm_var_fieldset-color: $black;
+$frm_var_fieldset-padding: 0 0 15px 0;
+$frm_var_fieldset-bg-color: transparent;
+$frm_var_title-size: 40px;
+$frm_var_title-color: $body-color;
+$frm_var_title-margin-top: 10px;
+$frm_var_title-margin-bottom: 60px;
+$frm_var_form-desc-size: 16px;
+$frm_var_form-desc-color: $body-color;
+$frm_var_form-desc-margin-top: 10px;
+$frm_var_form-desc-margin-bottom: 25px;
+$frm_var_font: $frm_font_1;
+$frm_var_font-size: 14px;
+$frm_var_weight: $font__weight--heading;
+$frm_var_position: none;
+$frm_var_align: left;
+$frm_var_width: 150px;
+$frm_var_dz-border-color: $color__primary;
+$frm_var_required-color: $color__primary;
+$frm_var_required-weight: bold;
+$frm_var_label-padding: 0 0 3px 0;
+$frm_var_label-color: $body-color;
+$frm_var_label-font: $font__family--heading;
+$frm_var_label-weight: $font__weight--heading;
+$frm_var_description-font-size: 12px;
+$frm_var_description-color: $body-color;
+$frm_var_description-weight: normal;
+$frm_var_description-style: normal;
+$frm_var_description-align: left;
+$frm_var_description-margin: 0;
+$frm_var_field-font-size: 16px;
+$frm_var_field-height: 32px;
+$frm_var_line-height: 32px;
+$frm_var_field-width: 100%;
+$frm_var_auto-width: 100%;
+$frm_var_field-pad: 6px 10px;
+$frm_var_field-margin: 20px;
+$frm_var_field-weight: normal;
+$frm_var_text-color: $body-color;
+$frm_var_border-color: $color__secondary;
+$frm_var_field-border-width: 1px;
+$frm_var_field-border-style: solid;
+$frm_var_bg-color: $color__secondary;
+$frm_var_bg-color-active: $color__secondary;
+$frm_var_border-color-active: $grey;
+$frm_var_text-color-error: $color__primary;
+$frm_var_bg-color-error: $white;
+$frm_var_border-color-error: $color__primary;
+$frm_var_border-width-error: 1px;
+$frm_var_border-style-error: solid;
+$frm_var_bg-color-disabled: $grey;
+$frm_var_border-color-disabled: $grey;
+$frm_var_text-color-disabled: $grey;
+$frm_var_radio-align: block;
+$frm_var_check-align: block;
+$frm_var_check-font-size: 13px;
+$frm_var_check-label-color: $body-color;
+$frm_var_check-weight: normal;
+$frm_var_section-font-size: 18px;
+$frm_var_section-color: $body-color;
+$frm_var_section-weight: bold;
+$frm_var_section-pad: 15px 0 3px 0;
+$frm_var_section-mar-top: 15px;
+$frm_var_section-mar-bottom: 30px;
+$frm_var_section-bg-color: transparent;
+$frm_var_section-border-color: $color__primary;
+$frm_var_section-border-width: 2px;
+$frm_var_section-border-style: solid;
+$frm_var_section-border-loc: -top;
+$frm_var_collapse-pos: after;
+$frm_var_submit-font-size: 15px;
+$frm_var_submit-width: auto;
+$frm_var_submit-height: auto;
+$frm_var_submit-bg-color: $color__primary;
+$frm_var_submit-border-color: $color__primary;
+$frm_var_submit-border-width: 1px;
+$frm_var_submit-text-color: $white;
+$frm_var_submit-weight: normal;
+$frm_var_submit-border-radius: $border-radius;
+$frm_var_submit-margin: 10px;
+$frm_var_submit-padding: 10px 20px;
+$frm_var_submit-shadow-color: transparent;
+$frm_var_submit-hover-bg-color: $color__primary;
+$frm_var_submit-hover-color: $white;
+$frm_var_submit-hover-border-color: $color__primary;
+$frm_var_submit-active-bg-color: $color__primary;
+$frm_var_submit-active-color: $white;
+$frm_var_submit-active-border-color: $color__primary;
+$frm_var_border-radius: $border-radius;
+$frm_var_error-bg: $color__primary;
+$frm_var_error-border: $color__primary;
+$frm_var_error-text: $white;
+$frm_var_error-font-size: 16px;
+$frm_var_success-bg-color: $grey;
+$frm_var_success-border-color: $grey;
+$frm_var_success-text-color: $grey;
+$frm_var_success-font-size: 16px;
+$frm_var_progress-bg-color: $color__secondary;
+$frm_var_progress-active-color: $white;
+$frm_var_progress-active-bg-color: $color__primary;
+$frm_var_progress-color: $body-color;
+$frm_var_progress-border-color: $color__primary;
+$frm_var_progress-border-color-b: $color__primary;
+$frm_var_progress-border-size: 1px;
+$frm_var_progress-size: 30px;
+$frm_var_toggle-font-size: 15px;
+$frm_var_toggle-on-color: $color__primary;
+$frm_var_toggle-off-color: $grey;
+$frm_var_slider-font-size: 24px;
+$frm_var_slider-color: $white;
+$frm_var_slider-bar-color: $color__primary;
+$frm_var_date-head-bg-color: $color__primary;
+$frm_var_date-head-color: $white;
+$frm_var_date-band-color: $color__secondary;
+$frm_var_box-shadow: none;
+$frm_var_image-size: 150px;
+
+/**
+ * WooCommerce
+ */
+$woocommerce:   	$color__primary;
+$green:         	$grey;
+$red:               $color__primary;
+$orange:        	$grey;
+$blue:          	$color__primary;
+
+$primary:           $color__primary;                                  // Primary color for buttons (alt)
+$primarytext:       $white;    // Text on primary color bg
+
+$secondary:         $grey;    // Secondary buttons
+$secondarytext:     $white;   // Text on secondary color bg
+
+$highlight:         $color__primary;                // Prices, In stock labels, sales flash
+$highlightext:      $white;  // Text on highlight color bg
+
+$contentbg:         $body-bg;                                     // Content BG - Tabs (active state)
+$subtext:           $grey;                                  // small, breadcrumbs etc
+
+// export vars as CSS vars
+:root {
+  --woocommerce: $woocommerce;
+  --wc-green: $green;
+  --wc-red: $red;
+  --wc-orange: $orange;
+  --wc-blue: $blue;
+  --wc-primary: $primary;
+  --wc-primary-text: $primarytext;
+  --wc-secondary: $secondary;
+  --wc-secondary-text: $secondarytext;
+  --wc-highlight: $highlight;
+  --wc-highligh-text: $highlightext;
+  --wc-content-bg: $contentbg;
+  --wc-subtext: $subtext;
+}

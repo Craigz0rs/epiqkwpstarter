@@ -1,0 +1,207 @@
+@at-root {
+  @-ms-viewport { width: device-width; } // stylelint-disable-line at-rule-no-vendor-prefix
+}
+
+@each $name, $hex in $colors {
+
+  :root .has-#{$name}-background-color {
+    background-color: $hex;
+  }
+
+  :root .has-#{$name}-color {
+    color: $hex;
+  }
+
+}
+
+:root {
+  color-scheme: light !important;
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  font-size: $font__size--base;
+  &.toggle-main-nav {
+  
+    &, & body {
+      overflow: hidden;
+    }
+    
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  overflow-y: scroll !important;
+  margin: 0;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-main {
+
+  ol {
+    list-style: none;
+    counter-reset: counter;
+    margin: 1em 0;
+    
+    > li {
+      position: relative;
+      counter-increment: counter;
+      padding-left: 20px;
+        line-height: (32 / 16);
+        margin-bottom: $gutter;
+  
+        > strong {
+          display: inline-block;
+          margin-bottom: 16px;
+          color: $grey;
+        }
+  
+        &::before {
+            position: absolute;
+            left: 0px;
+            content: counter(counter) ".";
+            color: inherit;
+            font-weight: 600;
+            margin-right: 4px;
+        }
+    }
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+  
+    > li {
+      position: relative;
+      line-height: (32 / 16);
+      padding-left: 20px;
+
+      &::before {
+        position: absolute;
+        left: 0px;
+          content: "\2022";
+          color: inherit;
+          font-weight: 600;
+      }
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.content-wrap {
+  margin: 0 auto;
+  padding: 0 $gutter;
+  width: 100%;
+  max-width: $site__max-width;
+
+  @include screen--xxl {
+    padding: 0 $gutter--lg;
+  }
+}
+
+.no-padding--y {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.no-padding--x {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.no-margin--y {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.no-margin--x {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+figure {
+  margin: 2em 0;
+
+  img {
+    height: auto;
+    display: block;
+  }
+}
+
+blockquote {
+  color: $color__primary;
+  margin: $gutter--sm 0;
+
+
+  @include screen--xl {
+    margin: calc(2 * #{$gutter--sm});
+    line-height: 1.5;
+  }
+
+  > cite {
+
+    &:before {
+      content: '\2015';
+      margin-right: 10px;
+    }
+  }
+}
+
+.observing {
+
+  opacity: 0;
+  transform: translateY( 50px );
+
+  &.intersected {
+
+    opacity: 1;
+    transform: translateY( 0 );
+    transition: transition-map( [ opacity, transform ], 500ms );
+
+  }
+
+}
+
+/* Hacky Microsoft Internet Explorer 11 Overrides */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+}
+
+.admin-bar {
+  .header {
+    margin-top: 46px;
+
+    @media screen and (min-width: 783px) {
+      margin-top: 32px;
+    }
+  }
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}

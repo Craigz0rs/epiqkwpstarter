@@ -1,0 +1,164 @@
+@import "partials/abstracts/abstracts";
+
+@import "functions";
+
+@import "variables";
+
+@import "mixins";
+
+[class$="skeleton__content"] {
+
+  .editor-styles-wrapper {
+  
+    &,
+    .editor-rich-text__tinymce,
+    .editor-block-list__layout .editor-default-block-appender > .editor-default-block-appender__content {
+      color: $body-color;
+
+      font-family: $font-family-body;
+      font-size: 12px;
+      font-weight: $font-weight-body-regular;
+      line-height: ( 22 / 12 );
+    
+      @include media-breakpoint-up ( $breakpoint ) {
+        font-size: 18px;
+        line-height: ( 30 / 18 );
+      } 
+    }
+
+    #post-title-0 {
+      font-family: $font-family-heading;
+      font-size: 47px;
+    }
+
+    .editor-post-title {
+      
+      background-color: #f9f9f9;
+      border-bottom: 1px solid #e2e4e7;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin-top: -50px;
+      margin-bottom: 50px;
+      
+    }
+
+    .editor-post-title__block:before {
+
+      content: 'Page Title:';
+      display: block;
+      
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      font-size: 13px;
+      line-height: 1.4em;
+      
+      position: absolute;
+      left: 14px;
+      top: 0;
+      transform: translateY( -100% );
+      
+    }
+
+    .editor-post-title__block .editor-post-title__input {
+
+      font-family: $font-family-heading;
+      font-weight: $font-weight-heading-regular;
+      
+    }
+
+    .wp-block-column {
+
+      &.column-image {
+
+        .wp-block-image {
+
+          > .components-resizable-box__container {
+    
+            width: 100% !important;
+            height: 100% !important;
+
+            .components-resizable-box__handle {
+
+              display: none !important;
+
+            }
+    
+          }
+    
+        }
+
+      }
+
+    }
+
+    .wp-block {
+
+      max-width: 100%;
+
+      .post-type-post &:not(.editor-post-title__block) {
+    
+        max-width: 1000px;
+
+        h2 {
+
+          font-size: 35px;
+          font-weight: $font-weight-heading-bold;
+          text-transform: none;
+  
+          margin-top: 1em;
+  
+        }
+    
+      }
+    
+    }
+
+    .cta-arrow-wrapper {
+
+      > a {
+        
+        pointer-events: none;
+
+      }
+
+    }
+
+    @import "partials/app-common";
+
+    @each $name, $hex in $colors {
+
+      .has-#{$name}-background-color {
+        background-color: $hex;
+      }
+    
+      .has-#{$name}-color {
+        color: $hex;
+      }
+    
+    }
+  }
+
+  a.acf-button, a.acf-icon {
+    color: $white;
+
+    &:hover {
+      color: #00b9eb;
+    }
+  }
+
+  div.acf-link > a {
+    color: #2271b1;
+
+    &:hover {
+      color: #0a4b78;
+    }
+  }
+
+  .acf-row-handle a {
+    color: #555d66;
+
+    &:hover {
+      color: #0071a1;
+    }
+  }
+
+}

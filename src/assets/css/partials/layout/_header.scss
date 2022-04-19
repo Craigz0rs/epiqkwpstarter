@@ -1,0 +1,29 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $header-bg;
+  z-index: 999;
+  transition: $transition;
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__branding {
+    display: block;
+    width: 200px;
+    z-index: 9999;
+  }
+
+  html.scrolled & {
+    background-color: $header-bg--scrolled;
+    height: $header-height--desktop;
+  }
+}

@@ -1,0 +1,30 @@
+body {
+  font-family: $font__family--body;
+  font-weight: $font__weight--body;
+  font-size: $font__size--base;
+  color: $font__color--body;
+  line-height: $font__line-ht--base;
+}
+
+a {
+  text-decoration: none;
+  color: $font__color--link;
+  transition: $transition;
+
+  &:focus, &:active, &:hover {
+    text-decoration: none;
+    color: $color__secondary;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $font__family--heading;
+  font-weight: $font__weight--heading;
+  color: $font__color--heading;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+
+  > sup, > sub {
+    display: block;
+  }
+}

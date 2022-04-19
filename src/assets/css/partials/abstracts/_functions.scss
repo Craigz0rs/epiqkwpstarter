@@ -1,0 +1,92 @@
+@function tracking( $target, $emsize: 1000 ){
+  @if $emsize > 0 { @return ( $target / $emsize ) * 1em; }
+  @else { @return 0; }
+}
+
+@function rem-calc( $size ) {
+
+  // Don't bother using me. Just stick to absolute pixel sizes.
+
+  // $remSize: $size / 16;
+  // @return #{$remSize}rem;
+  
+  @return #{$size}px;
+  
+}
+
+@function vw-calc( $size, $base: 1600 ) {
+
+  // Assumes base font size is 16px. `html { font-size: 16px; }`
+
+  $vwSize: $size / 16;
+  @if $base > 0 { $vwSize: $size / $base * 100; }
+  
+  @return #{$vwSize}vw;
+  
+}
+
+@function transition-map( $properties: [ color ], $timing: $transition-fast, $easing: ease-out  ) {
+
+  $str: "";
+  @each $property in $properties {
+    $str:  $str + $property + " " + $timing + " " + $easing + ", ";
+  }
+  $str: #{str-slice($str, 0, -2)};
+  
+  @return $str;
+
+}
+
+// ----
+// Sass (v3.4.9)
+// Compass (v1.0.1)
+// ----
+
+// Sass: placeholder-exists() in Sass.
+//
+// Automatically placeholder-ize duplicated CSS declarations.
+// https://gist.github.com/whizark/720ffec139368fa61932
+//
+// Other ideas
+// https://github.com/whizark/xass#ideas 
+
+// List for Placeholder names.
+$defined-placeholders: ();
+
+// Returns whether a placeholder exists.
+//
+// Note: This cannot check nested (scoped) placeholders.
+@function placeholder-exists($name) {
+  @if index($defined-placeholders, $name) == null {
+    @return false;
+  }
+
+  @return true;
+}
+
+// Registers a placeholder.
+//
+// @access private
+@function register-placeholder($name) {
+  @if placeholder-exists($name) {
+    // @debug "Placeholder #{$name} already exists.";
+  } @else {
+    $defined-placeholders: append($defined-placeholders, $name) !global;
+    // @debug "Registered placeholder #{$name}.";
+  }
+  
+  @return $name;
+}
+
+// Defines a placeholder.
+@mixin define-placeholder($name) {
+
+  @if placeholder-exists($name) == false {
+    %#{$name} {
+      $name: register-placeholder($name);
+
+      @content;
+    }
+  }
+
+}

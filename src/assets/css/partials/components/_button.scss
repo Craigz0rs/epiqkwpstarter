@@ -1,0 +1,13 @@
+.wp-block-button__link {
+  border: none;
+  background: transparent;
+  color: $font__color--heading;
+  font-family: $font__family--heading;
+  font-weight: $font__weight--heading;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
